@@ -1,14 +1,18 @@
-# This is a sample Python script.
+def code(s:str,p:int):
+    sifra=""
+    for znak in s.upper():
+        if znak.isalpha():
+            znak_code = ord(znak)
+            novy_znak_code = znak_code + p
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+            if novy_znak_code > 90:
+                 novy_znak_code -= 26
+
+            novy_znak = chr(novy_znak_code)
+            sifra += novy_znak
+        else:
+            sifra += znak
+    print(sifra)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+code('Hello, World!', 7)
